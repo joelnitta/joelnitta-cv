@@ -2,49 +2,190 @@
 title: CV
 format:
   quarto-cv-pdf: default
-author: William Gosset
+author: Joel H. Nitta
 date: last-modified
-phone: 123-456-7890
-address: "Guinness Brewery · Park Royal · London NW10 7RR, UK"
-email: guinness@consumer-care.net
+address: "Graduate School of Global and Transdisciplinary Studies, Chiba University, Chiba, Japan"
+email: joelnitta@chiba-u.jp
 fontsize: 11pt
-#github: github # github account
-orcid: 0000-0002-1825-0097 # orcid identifier
-#osf: ymqui # osf five character id
-#twitter: twitter # twitter handle
-web: quarto.org
+urlcolor: mycolor
+github: joelnitta
+orcid: 0000-0003-4719-7472
+web: www.joelnitta.com
 fontawesome: yes
 nocite: '@*'
 bibliography: 
   peer: peer_bib.bib
-  other: other_bib.bib
 validate-yaml: false
 csl: apa-cv.csl
 ---
 
 # Employment
+\hrule
 
-*Arthur Guinness & Son*
+**Graduate School of Global and Transdisciplinary Studies, Chiba University** \hfill Chiba, Japan  
+Associate Professor \hfill Apr. 2023 -- present
 
-Chief Brewer (Park Royal) \hfill 1935-1937
+**Department of Integrated Biosciences, The University of Tokyo** \hfill Tokyo, Japan  
+Project Research Associate \hfill Apr. 2020 -- Mar. 2023
 
-Researcher (Dublin) \hfill 1899-1935
+**Department of Botany, National Museum of Natural History, Smithsonian Institution** \hfill Washington, DC  
+Peter Buck Postdoctoral Research Fellow \hfill Jan. 2019 -- Mar. 2020
+
+**Department of Botany, National Museum of Nature and Science** \hfill Tsukuba, Japan  
+Japan Society for the Promotion of Science Postdoctoral Research Fellow \hfill Nov. 2016 - Dec. 2018
 
 # Education
+\hrule
 
-*New College, Oxford University*, B.A. Chemistry \hfill 1899
+**Harvard University** \hfill Cambridge, MA  
+*PhD, Organismic and Evolutionary Biology* \hfill Nov. 2016
+
+**University of Tokyo** \hfill Tokyo, Japan  
+*MS, Biological Sciences* \hfill Mar. 2010
+
+**University of California, Berkeley** \hfill Berkeley, CA  
+*BA, Integrative Biology and Japanese Language* \hfill May 2007
+
+\vspace{-0.5\baselineskip}
+- Highest Honors in Integrative Biology
+- Highest Distinction in General Scholarship
+
+# Grants
+\hrule
+
+**Evolutionary origins of endemic ferns on an island biodiversity hotspot** \hfill Tokyo, Japan  
+Japan Society for the Promotion of Science (Grant-in-Aid for Early-Career Scientists) \hfill 2022 -- 2026  
+$31,000 (PI)
+
+**Biogeography of Polynesian Pteridophytes: Insights from DNA barcoding** \hfill Washington, DC  
+Smithsonian Institution Barcode Initiative \hfill 2019  
+$8,000 (Internal grant)
+
+**Elucidating the evolutionary history of a polyploid fern species complex using next-generation sequencing**  
+Japan Society for the Promotion of Science (Grant-in-Aid for JSPS Fellows) \hfill Tsukuba, Japan  
+$21,000 (Co-PI) \hfill 2016 -- 2019
+
+**Investigating the role of a cryptic life stage in fern evolution and community assembly** \hfill Cambridge, MA  
+National Science Foundation Doctoral Dissertation Improvement Grant  \hfill 2013 -- 2015  
+$21,970 (Co-PI)
+
+# Honors
+\hrule
+
+**Best Talk** \hfill Madison, WI (online)  
+Intelligent Systems for Molecular Biology EvolCompGen COSI \hfill 2022
+
+**The Young Scientist Award** \hfill Tokyo, Japan  
+Japanese Society for Plant Systematics \hfill 2022
+
+**Best Oral Presentation** \hfill Tokyo, Japan  
+Japanese Society for Plant Systematics \hfill 2021
+
+**Japanese Government (Monbukagakusho: MEXT) Scholarship**  \hfill Tokyo, Japan  
+University of Tokyo \hfill 2008
+
+**Departmental Citation**  \hfill Berkeley, CA  
+Department of Integrative Biology, University of California, Berkeley \hfill 2007
+
+**Regents and Chancellor’s Scholar**  \hfill Berkeley, CA  
+University of California, Berkeley \hfill 2002
+
+# Teaching
+\hrule
+
+## Undergraduate
+
+**Biodiversity and Japan** \hfill Chiba, Japan  
+College of Liberal Arts and Sciences, Chiba University \hfill 2023 Spring
+
+**Reproducible Data Analysis** \hfill Chiba, Japan  
+College of Liberal Arts and Sciences, Chiba University \hfill 2023 Summer
+
+# Workshops
+\hrule
+
+**Spatial Phylogenetics Workshop** \hfill Oslo, Norway  
+ForBio, Natural History Museum, University of Oslo \hfill June 2023
+
+**How to Use `targets` for Effective Workflows in R** \hfill Oslo, Norway  
+Univeristy of Oslo Library and Carpentry\@UiO \hfill June 2023
+
+**ASCS2022 Workshop on Reproducible Scientific Analysis** \hfill Online  
+ISCB 1st Asian Student Council Symposium \hfill Dec. 2022
+
+**Modular, Reproducible Bioinformatics Workflows with the `targets` R package** \hfill Online  
+International Society for Computationay Biology \hfill June 2022
+
+# Software
+\hrule
+
+For complete summary of projects on github, please see <https://github.com/joelnitta>
+
+## Developer and maintainer
+
+**[`canaper`](https://github.com/ropensci/canaper)**  
+*Categorial analysis of neo-and paleo-endemism in R*
+
+**[`dwctaxon`](https://github.com/ropensci/dwctaxon)**  
+*Tools for working with Darwin Core Taxon data*
+
+**[`taxastand`](https://github.com/joelnitta/taxastand)**  
+*Standardize species names across data sources*
+
+## Maintainer
+
+**[`restez`](https://github.com/ropensci/restez)**  
+*Access GenBank data locally*
+
+**[`rgnparser`](https://github.com/ropensci/rgnparser)**  
+*Interface to gnparser in R*
+
+# Invited Talks
+\hrule
+
+**FTOL and PPG2: The Cutting Edge of Pteridophyte Evolution and Systematics**\* \hfill Tsukuba, Japan  
+Tsukuba Botanical Garden Special Fern Exhibit \hfill 2023  
+
+**DNA Barcoding of Fern Gametophytes: Past, Present, and Future** \hfill Calicut, India (online)  
+XVI Conference of the Indian Fern Society and International Symposium \hfill 2022
+
+**Phylogenetic systematics and community assembly processes in ferns**\* \hfill Online  
+21st Annual Meeting of the Japanese Society for Plant Systematics \hfill 2022  
+*Young Scientist Award Lecture*
+
+**Fern flora of Moorea and Tahiti, French Polynesia: Community analysis using** \hfill Noda, Japan  
+**DNA barcodes**\*  \hfill 2017  
+Japan Pteridological Society Meeting at the 81st Annual Meeting of the Botanical Society of Japan
+
+\**in Japanese*
 
 # Publications
+\hrule
 
 ::: {#refs-peer}
 :::
 
-# Technical Reports
+# Community Activity
+\hrule
 
-::: {#refs-other}
-:::
+## Volunteer Roles
 
+**Editorial Board Member** \hfill 2020 -- present  
+*Journal of Plant Research*
 
-# References
+**Subject Editor** \hfill 2022 -- present  
+*Phytokeys*
 
-Available upon request, though likely would include Karl Pearson and Ronald A. Fisher.
+**Subject Editor** \hfill 2017 -- 2023  
+*Phytotaxa*
+
+**Team Member** \hfill 2018 -- present  
+*[Software Carpentry Japanese translation team](https://swcarpentry-ja.github.io/en/)*
+
+## Societies
+
+*American Fern Society*, *Botanical Society of Japan*, *Japanese Society for Plant Systematics*
+
+## Journals Reviewed
+
+*Acta Botanica Gallica*, *American Fern Journal*, *American Journal of Botany*, *Annals of Botany*, *AoB PLANTS*, *Australian Systematic Botany*, *Biology Letters*, *Botanical Journal of the Linnean Society*, *Botany Letters*, *Brittonia*, *Ecology and Evolution*, *Journal of Ecology*, *Journal of Plant Research*, *Molecular Phylogenetics and Phylogeny*, *New Phytologist*, *Plant Species Biology*, *Phytotaxa*, *PLoS ONE*, *Taxon*
