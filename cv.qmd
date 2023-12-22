@@ -161,6 +161,7 @@ Japan Pteridological Society Meeting at the 81st Annual Meeting of the Botanical
 
 # Publications
 \hrule
+\vspace{0.2cm}
 
 ::: {#refs-peer}
 :::
