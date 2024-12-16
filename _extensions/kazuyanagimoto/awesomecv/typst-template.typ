@@ -316,7 +316,7 @@ $endif$
     size: 10pt,
     style: "normal",
     weight: "light",
-    fill: color-darknight,
+    fill: color-gray,
   )
   set par(leading: 0.65em)
   set list(indent: 1em)
