@@ -420,7 +420,7 @@ $endif$
   
   show heading.where(level: 3): it => {
     set text(
-      size: 10pt,
+      size: 12pt,
       weight: "regular",
       fill: color-gray,
     )
