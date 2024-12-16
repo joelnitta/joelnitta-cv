@@ -18,6 +18,10 @@ author:
     - icon: fa brands github
       text: \@joelnitta
       url: https://github.com/joelnitta
+style:
+   color-accent: "40597C"
+   font-header: "Libertinus Serif"
+   font-text: "Libertinus Serif"
 format: awesomecv-typst
 ---
 
@@ -89,6 +93,36 @@ format: awesomecv-typst
 #resume-item[
   - \$31,000 (PI)
 ]
+
+#resume-entry(
+  title: "Smithsonian Institution Barcode Initiative",
+  location: "Washington, DC",
+  date: "2019",
+  description: "Biogeography of Polynesian Pteridophytes: Insights from DNA barcoding",
+)
+#resume-item[
+  - \$8,000 (Internal grant)
+]
+
+#resume-entry(
+  title: "Japan Society for the Promotion of Science (Grant-in-Aid for JSPS Fellows)",
+  location: "Tsukuba, Japan",
+  date: "2016 - 2019",
+  description: "Elucidating the evolutionary history of a polyploid fern species complex using next-generation sequencing",
+)
+#resume-item[
+  - \$21,000 (Co-PI)
+]
+
+#resume-entry(
+  title: "National Science Foundation Doctoral Dissertation Improvement Grant",
+  location: "Cambridge, MA",
+  date: "2013 - 2015",
+  description: "Investigating the role of a cryptic life stage in fern evolution and community assembly",
+)
+#resume-item[
+  - \$21,970 (Co-PI)
+]
 ```
 
 ## Awards
@@ -100,7 +134,163 @@ format: awesomecv-typst
   date: "2022",
   description: "Best Talk"
 )
+
+#resume-entry(
+  title: "Japanese Society for Plant Systematics",
+  location: "Tokyo, Japan",
+  date: "2022",
+  description: "The Young Scientist Award"
+)
+
+#resume-entry(
+  title: "Japanese Society for Plant Systematics",
+  location: "Tokyo, Japan",
+  date: "2021",
+  description: "Best Oral Presentation"
+)
+
+#resume-entry(
+  title: "University of Tokyo",
+  location: "Tokyo, Japan",
+  date: "2008",
+  description: "Japanese Government (Monbukagakusho: MEXT) Scholarship"
+)
+
+#resume-entry(
+  title: "Department of Integrative Biology, University of California, Berkeley",
+  location: "Berkeley, CA",
+  date: "2007",
+  description: "Departmental Citation"
+)
+
+#resume-entry(
+  title: "University of California, Berkeley",
+  location: "Berkeley, CA",
+  date: "2002",
+  description: "Regents and Chancellor’s Scholar"
+)
 ```
+
+## Teaching
+
+```{=typst}
+=== Undergraduate
+
+#resume-entry(
+  title: "Biodiversity and Japan",
+  description: "College of Liberal Arts and Sciences, Chiba University",
+  location: "Chiba, Japan",
+  date: "2023 - present"
+)
+
+#resume-entry(
+  title: "Reproducible Data Analysis",
+  description: "College of Liberal Arts and Sciences, Chiba University",
+  location: "Chiba, Japan",
+  date: "2023 - present"
+)
+
+=== Graduate
+
+#resume-entry(
+  title: "Data Science",
+  description: "Graduate School of Global and Transdisciplinary Studies",
+  location: "Chiba, Japan",
+  date: "2024 - present"
+)
+
+=== Workshops
+
+#resume-entry(
+  title: "Spatial Phylogenetics Workshop",
+  description: "ForBio, Natural History Museum, University of Oslo",
+  location: "Oslo, Norway",
+  date: "June 2023"
+)
+
+#resume-entry(
+  title: "How to Use `targets` for Effective Workflows in R",
+  description: "University of Oslo Library and Carpentry@UiO",
+  location: "Oslo, Norway",
+  date: "June 2023"
+)
+
+#resume-entry(
+  title: "ASCS2022 Workshop on Reproducible Scientific Analysis",
+  description: "ISCB 1st Asian Student Council Symposium",
+  location: "Online",
+  date: "Dec. 2022"
+)
+
+#resume-entry(
+  title: "Modular, Reproducible Bioinformatics Workflows with the `targets` R package",
+  description: "International Society for Computational Biology",
+  location: "Online",
+  date: "June 2022"
+)
+```
+
+## Software
+
+For complete summary of projects on github, please see <https://github.com/joelnitta>
+
+```{=typst}
+=== Developer and maintainer
+
+- #link("https://github.com/ropensci/canaper")[*`canaper`*]
+  - _Categorial analysis of neo-and paleo-endemism in R_
+
+- #link("https://github.com/ropensci/dwctaxon")[*`dwctaxon`*]
+  - _Tools for working with Darwin Core Taxon data_
+
+- #link("https://github.com/joelnitta/taxastand")[*`taxastand`*]
+  - _Standardize species names across data sources_
+
+=== Maintainer
+
+- #link("https://github.com/ropensci/restez")[*`restez`*]
+  - _Access GenBank data locally_
+
+- #link("https://github.com/ropensci/rgnparser")[*`rgnparser`*]
+  - _Interface to `gnparser` in R_
+```
+
+## Invited Talks
+
+```{=typst}
+#resume-entry(
+  title: "Tsukuba Botanical Garden Special Fern Exhibit",
+  location: "Tsukuba, Japan",
+  date: "2023",
+  description: "FTOL and PPG2: The Cutting Edge of Pteridophyte Evolution and Systematics"
+)
+
+#resume-entry(
+  title: "XVI Conference of the Indian Fern Society and International Symposium",
+  location: "Calicut, India (online)",
+  date: "2022",
+  description: "DNA Barcoding of Fern Gametophytes: Past, Present, and Future"
+)
+
+#resume-entry(
+  title: "21st Annual Meeting of the Japanese Society for Plant Systematics",
+  location: "Online",
+  date: "2022",
+  description: "Phylogenetic systematics and community assembly processes in ferns",
+)
+#resume-item[
+  - Young Scientist Award Lecture
+]
+
+#resume-entry(
+  title: "Japan Pteridological Society Meeting at the 81st Annual Meeting of the Botanical Society of Japan",
+  location: "Noda, Japan",
+  date: "2017",
+  description: "Fern flora of Moorea and Tahiti, French Polynesia: Community analysis using DNA barcodes"
+)
+```
+
+\**in Japanese*
 
 ## Publications
 
@@ -205,10 +395,46 @@ bib_list <- bib_list[bib_list != ""] |>
 cat(paste("1.", bib_list), sep = "\n")
 ```
 
-## Societies
+## Community Activity
 
-*American Fern Society*, *Botanical Society of Japan*, *Japanese Society for Plant Systematics*
+```{=typst}
 
-## Journals Reviewed
+=== Volunteer Roles
 
-*Acta Botanica Gallica*, *American Fern Journal*, *American Journal of Botany*, *Annals of Botany*, *AoB PLANTS*, *Australian Systematic Botany*, *Biology Letters*, *Botanical Journal of the Linnean Society*, *Botany Letters*, *Brittonia*, *Ecology and Evolution*, *Journal of Ecology*, *Journal of Plant Research*, *Molecular Phylogenetics and Phylogeny*, *New Phytologist*, *Plant Species Biology*, *Phytotaxa*, *PLoS ONE*, *Taxon*
+#resume-entry(
+  title: "Journal of Plant Research",
+  location: "",
+  date: "2020 - present",
+  description: "Editorial Board Member"
+)
+
+#resume-entry(
+  title: "Phytokeys",
+  location: "",
+  date: "2022 - present",
+  description: "Subject Editor"
+)
+
+#resume-entry(
+  title: "Phytotaxa",
+  location: "",
+  date: "2017 - 2023",
+  description: "Subject Editor"
+)
+
+#resume-entry(
+  title: "Software Carpentry Japan",
+  location: "",
+  date: "2018 - present",
+  description: "Team Member"
+)
+
+=== Societies
+
+_American Fern Society_, _Botanical Society of Japan_, _Japanese Society for Plant Systematics_
+
+=== Journals Reviewed
+
+_Acta Botanica Gallica_, _American Fern Journal_, _American Journal of Botany_, _Annals of Botany_, _AoB PLANTS_, _Australian Systematic Botany_, _Biology Letters_, _Botanical Journal of the Linnean Society_, _Botany Letters_, _Brittonia_, _Ecology and Evolution_, _Journal of Ecology_, _Journal of Plant Research_, _Molecular Phylogenetics and Phylogeny_, _New Phytologist_, _Plant Species Biology_, _Phytotaxa_, _PLoS ONE_, _Taxon_
+
+```
