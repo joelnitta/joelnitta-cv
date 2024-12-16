@@ -381,6 +381,10 @@ $endif$
       ]
     ],
   )
+
+  show link: this => {
+    text(this, fill: color-accent)
+  }
   
   // set paragraph spacing
 
