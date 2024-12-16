@@ -173,9 +173,9 @@ format: awesomecv-typst
 
 ## Teaching
 
-```{=typst}
-=== Undergraduate
+### Undergraduate 
 
+```{=typst}
 #resume-entry(
   title: "Biodiversity and Japan",
   description: "College of Liberal Arts and Sciences, Chiba University",
@@ -189,18 +189,22 @@ format: awesomecv-typst
   location: "Chiba, Japan",
   date: "2023 - present"
 )
+```
 
-=== Graduate
+### Graduate
 
+```{=typst}
 #resume-entry(
   title: "Data Science",
   description: "Graduate School of Global and Transdisciplinary Studies",
   location: "Chiba, Japan",
   date: "2024 - present"
 )
+```
 
-=== Workshops
+### Workshops
 
+```{=typst}
 #resume-entry(
   title: "Spatial Phylogenetics Workshop",
   description: "ForBio, Natural History Museum, University of Oslo",
@@ -234,9 +238,9 @@ format: awesomecv-typst
 
 For complete summary of projects on github, please see <https://github.com/joelnitta>
 
-```{=typst}
-=== Developer and maintainer
+### Developer and maintainer
 
+```{=typst}
 - #link("https://github.com/ropensci/canaper")[*`canaper`*]
   - _Categorial analysis of neo-and paleo-endemism in R_
 
@@ -245,9 +249,11 @@ For complete summary of projects on github, please see <https://github.com/joeln
 
 - #link("https://github.com/joelnitta/taxastand")[*`taxastand`*]
   - _Standardize species names across data sources_
+```
 
-=== Maintainer
+### Maintainer
 
+```{=typst}
 - #link("https://github.com/ropensci/restez")[*`restez`*]
   - _Access GenBank data locally_
 
@@ -397,10 +403,9 @@ cat(paste("1.", bib_list), sep = "\n")
 
 ## Community Activity
 
+### Volunteer Roles
+
 ```{=typst}
-
-=== Volunteer Roles
-
 #resume-entry(
   title: "Journal of Plant Research",
   location: "",
@@ -428,13 +433,16 @@ cat(paste("1.", bib_list), sep = "\n")
   date: "2018 - present",
   description: "Team Member"
 )
+```
 
-=== Societies
+### Societies
+
+<br>
 
 _American Fern Society_, _Botanical Society of Japan_, _Japanese Society for Plant Systematics_
 
-=== Journals Reviewed
+### Journals Reviewed
+
+<br>
 
 _Acta Botanica Gallica_, _American Fern Journal_, _American Journal of Botany_, _Annals of Botany_, _AoB PLANTS_, _Australian Systematic Botany_, _Biology Letters_, _Botanical Journal of the Linnean Society_, _Botany Letters_, _Brittonia_, _Ecology and Evolution_, _Journal of Ecology_, _Journal of Plant Research_, _Molecular Phylogenetics and Phylogeny_, _New Phytologist_, _Plant Species Biology_, _Phytotaxa_, _PLoS ONE_, _Taxon_
-
-```
