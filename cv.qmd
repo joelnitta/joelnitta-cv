@@ -445,7 +445,7 @@ bib_list <- bib_list[bib_list != ""] |>
   str_replace_all("J. H. Nitta", "**J. H. Nitta**") |>
   str_replace_all("Nitta, J. H.", "**Nitta, J. H.**") |>
   # software title formatting
-  str_replace_all("dwctaxon", "`dwctaxon`") |>
+  str_replace_all("dwctaxon", "*dwctaxon*") |>
   # DOIs as hyperlinks
   doi_to_hyperlink()
 
