@@ -307,6 +307,17 @@ For complete summary of projects on github, please see <https://github.com/joeln
 #| echo: false
 #| warning: false
 #| message: false
+# Ensure CI fails clearly if required credentials are missing
+required_env <- c("ZOTERO_USER_ID", "ZOTERO_API_KEY")
+missing_env <- required_env[Sys.getenv(required_env) == ""]
+if (length(missing_env) > 0) {
+  stop(
+    paste(
+      "Missing required environment variables:",
+      paste(missing_env, collapse = ", ")
+    )
+  )
+}
 
 # Load packages
 suppressPackageStartupMessages({
@@ -323,24 +334,64 @@ options(width = 500)
 # Function to make text DOIs into hyperlinks
 doi_to_hyperlink <- function(x) {
   str_remove_all(x, "\\.$") |>
-  str_replace_all(
-    regex("(https://doi.org/)(10\\.\\d{4,9}/[-._;()/:A-Z0-9]+)", ignore_case = TRUE),
-    "[\\2](\\1\\2)"
-  )
+    str_replace_all(
+      regex("(https://doi.org/)(10\\.\\d{4,9}/[-._;()/:A-Z0-9]+)", ignore_case = TRUE),
+      "[\\2](\\1\\2)"
+    )
 }
 
 # Get zotero user ID and API key
 zotero_user_id <- Sys.getenv("ZOTERO_USER_ID")
 
-zoter_api_key <- Sys.getenv("ZOTERO_API_KEY")
+zotero_api_key <- Sys.getenv("ZOTERO_API_KEY")
+
+# Retry once for transient network/API failures
+read_zotero_with_retry <- function(user, key, retries = 1L) {
+  attempt <- 0L
+
+  repeat {
+    attempt <- attempt + 1L
+    result <- tryCatch(
+      ReadZotero(
+        user = user,
+        .params = list(
+          tag = "nitta-pubs",
+          key = key
+        )
+      ),
+      error = function(e) e
+    )
+
+    if (!inherits(result, "error")) {
+      return(result)
+    }
+
+    if (attempt > retries) {
+      stop(
+        sprintf(
+          "ReadZotero failed after %d attempt(s): %s",
+          attempt,
+          conditionMessage(result)
+        )
+      )
+    }
+
+    warning(
+      sprintf(
+        "ReadZotero attempt %d failed, retrying once: %s",
+        attempt,
+        conditionMessage(result)
+      )
+    )
+    Sys.sleep(2)
+  }
+}
 
 # Download Zotero data
-refs_raw <- ReadZotero(
+refs_raw <- read_zotero_with_retry(
   user = zotero_user_id,
-  .params = list(
-    tag = "nitta-pubs",
-    key = zoter_api_key
-  )
+  key = zotero_api_key,
+  retries = 1L
 )
 
 # Convert to dataframe and parse (mostly removing latex fields)
@@ -378,10 +429,11 @@ suppressWarnings(
 # set bibentry style
 style <- list(
   style = "text",
-  bib.style = "authoryear", 
+  bib.style = "authoryear",
   max.names = 50,
-  dashed = FALSE, 
-  sorting = "ydnt")
+  dashed = FALSE,
+  sorting = "ydnt"
+)
 
 # capture printed output as char vec
 bib_list <- capture.output(print(refs_bibent, .opts = style))
