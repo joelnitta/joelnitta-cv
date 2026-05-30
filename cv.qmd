@@ -406,10 +406,10 @@ cat(paste("1.", bib_list), sep = "\n")
 
 ```{=typst}
 #resume-entry(
-  title: "Journal of Plant Research",
+  title: "rOpenSci",
   location: "",
-  date: "2020 - present",
-  description: "Editorial Board Member"
+  date: "2026 - present",
+  description: "Editor"
 )
 
 #resume-entry(
@@ -420,10 +420,10 @@ cat(paste("1.", bib_list), sep = "\n")
 )
 
 #resume-entry(
-  title: "Phytotaxa",
+  title: "Journal of Plant Research",
   location: "",
-  date: "2017 - 2023",
-  description: "Subject Editor"
+  date: "2020 - present",
+  description: "Editorial Board Member"
 )
 
 #resume-entry(
@@ -431,6 +431,13 @@ cat(paste("1.", bib_list), sep = "\n")
   location: "",
   date: "2018 - present",
   description: "Team Member"
+)
+
+#resume-entry(
+  title: "Phytotaxa",
+  location: "",
+  date: "2017 - 2023",
+  description: "Subject Editor"
 )
 ```
 
