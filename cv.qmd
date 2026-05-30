@@ -325,6 +325,7 @@ suppressPackageStartupMessages({
   library(dplyr)
   library(tibble)
   library(stringr)
+  library(yaml) # need to track since its a quarto dep
 })
 
 
