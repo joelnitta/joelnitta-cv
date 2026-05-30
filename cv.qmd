@@ -1,8 +1,7 @@
 ---
 title: CV
 author:
-  firstname: "Joel H."
-  lastname: Nitta
+  lastname: "Joel H. Nitta"
   address: "Studying biology at the intersection of ecology and evolution from species to the globe"
   position: "Graduate School of Global and Transdisciplinary Studies, Chiba University, Chiba, Japan"
   contacts:
