@@ -107,7 +107,7 @@ $endif$
   body
 }
 
-/// Right section of a tertiaty headers. 
+/// Right section of a tertiaty headers.
 /// - body (content): The body of the right header
 #let tertiary-right-header(body) = {
   set text(
@@ -146,7 +146,7 @@ $endif$
 /// - secondary (content): The secondary section of the header
 #let secondary-justified-header(primary, secondary) = {
   __justify_align[
-     #set text(
+    #set text(
       size: 10pt,
       weight: "regular",
       fill: color-gray,
@@ -165,7 +165,6 @@ $endif$
   firstname: "",
   lastname: "",
 ) = {
-  
   pad(bottom: 5pt)[
     #block[
       #set text(
@@ -183,27 +182,27 @@ $endif$
   position: "",
 ) = {
   set block(
-      above: 0.75em,
-      below: 0.75em,
-    )
-  
+    above: 0.75em,
+    below: 0.75em,
+  )
+
   set text(
     color-accent,
     size: 9pt,
     weight: "regular",
   )
-    
+
   smallcaps[
     #position
   ]
 }
 
 #let create-header-address(
-  address: ""
+  address: "",
 ) = {
   set block(
-      above: 0.75em,
-      below: 0.75em,
+    above: 0.75em,
+    below: 0.75em,
   )
   set text(
     color-lightgray,
@@ -218,7 +217,7 @@ $endif$
   contacts: (),
 ) = {
   let separator = box(width: 2pt)
-  if(contacts.len() > 1) {
+  if (contacts.len() > 1) {
     block[
       #set text(
         size: 9pt,
@@ -242,7 +241,7 @@ $endif$
   position: "",
   address: "",
   contacts: (),
-  align-header: center
+  align-header: center,
 ) = {
   align(align-header)[
     #create-header-name(firstname: firstname, lastname: lastname)
@@ -253,7 +252,7 @@ $endif$
 }
 
 #let create-header-image(
-  profile-photo: ""
+  profile-photo: "",
 ) = {
   if profile-photo.len() > 0 {
     block(
@@ -263,9 +262,9 @@ $endif$
       clip: true,
       image(
         fit: "contain",
-        profile-photo
-      )
-    ) 
+        profile-photo,
+      ),
+    )
   }
 }
 
@@ -286,7 +285,7 @@ $endif$
           position: position,
           address: address,
           contacts: contacts,
-          align-header: left
+          align-header: left,
         )
       ]
       #box(width: 1fr)[
@@ -294,16 +293,14 @@ $endif$
       ]
     ]
   } else {
-    
     create-header-info(
       firstname: firstname,
       lastname: lastname,
       position: position,
       address: address,
       contacts: contacts,
-      align-header: center
+      align-header: center,
     )
-
   }
 }
 
@@ -327,7 +324,7 @@ $endif$
   title: none,
   location: "",
   date: "",
-  description: ""
+  description: "",
 ) = {
   pad[
     #justified-header(title, location)
@@ -346,19 +343,18 @@ $endif$
   profile-photo: "",
   body,
 ) = {
-  
   set document(
     author: author.firstname + " " + author.lastname,
     title: title,
   )
-  
+
   set text(
     font: (font-text),
     size: 11pt,
     fill: color-darkgray,
     fallback: true,
   )
-  
+
   set page(
     paper: "a4",
     margin: (left: 15mm, right: 15mm, top: 10mm, bottom: 10mm),
@@ -377,7 +373,7 @@ $endif$
           CV
         ]
       ][
-        #counter(page).display()
+        #context counter(page).display()
       ]
     ],
   )
@@ -385,14 +381,14 @@ $endif$
   show link: this => {
     text(this, fill: color-accent)
   }
-  
+
   // set paragraph spacing
 
   set heading(
     numbering: none,
     outlined: false,
   )
-  
+
   show heading.where(level: 1): it => [
     #set block(
       above: 1.5em,
@@ -402,13 +398,13 @@ $endif$
       size: 16pt,
       weight: "regular",
     )
-    
+
     #align(left)[
       #text[#strong[#text(color-accent)[#it.body.text.slice(0, 3)]#text(color-darkgray)[#it.body.text.slice(3)]]]
       #box(width: 1fr, line(length: 100%))
     ]
   ]
-  
+
   show heading.where(level: 2): it => {
     set text(
       size: 12pt,
@@ -422,19 +418,21 @@ $endif$
     set text(
       color-middledarkgray,
       size: 12pt,
-      weight: "thin"
+      weight: "thin",
     )
     it.body
   }
-  
-  
+
+
   // Contents
-  create-header(firstname: author.firstname,
-                lastname: author.lastname,
-                position: author.position,
-                address: author.address,
-                contacts: author.contacts,
-                profile-photo: profile-photo,)
+  create-header(
+    firstname: author.firstname,
+    lastname: author.lastname,
+    position: author.position,
+    address: author.address,
+    contacts: author.contacts,
+    profile-photo: profile-photo,
+  )
   body
 }
 
