@@ -1,4 +1,4 @@
-#import "@preview/fontawesome:0.1.0": *
+#import "@preview/fontawesome:0.6.0": *
 
 //------------------------------------------------------------------------------
 // Style
@@ -12,27 +12,10 @@
 #let color-lightgray = rgb("#999999")
 
 // Default style
-#let color-accent-default = rgb("#dc3522")
-#let font-header-default = ("Roboto", "Arial", "Helvetica", "Dejavu Sans")
-#let font-text-default = ("Source Sans Pro", "Arial", "Helvetica", "Dejavu Sans")
-#let align-header-default = center
-
-// User defined style
-$if(style.color-accent)$
-#let color-accent = rgb("$style.color-accent$")
-$else$
-#let color-accent = color-accent-default
-$endif$
-$if(style.font-header)$
-#let font-header = "$style.font-header$"
-$else$
-#let font-header = font-header-default
-$endif$
-$if(style.font-text)$
-#let font-text = "$style.font-text$"
-$else$
-#let font-text = font-text-default
-$endif$
+#let state-font-header = state("font-header", (:))
+#let state-font-text = state("font-text", (:))
+#let state-color-accent = state("color-accent", color-darknight)
+#let state-color-link = state("color-link", color-darknight)
 
 //------------------------------------------------------------------------------
 // Helper functions
@@ -46,7 +29,7 @@ $endif$
     #if parts.len() == 2 {
       fa-icon(parts.at(1), fill: color-darknight)
     } else if parts.len() == 3 and parts.at(1) == "brands" {
-      fa-icon(parts.at(2), fa-set: "Brands", fill: color-darknight)
+      fa-icon(parts.at(2), font: "Font Awesome 6 Brands", fill: color-darknight)
     } else {
       assert(false, "Invalid fontawesome icon string")
     }
@@ -98,13 +81,15 @@ $endif$
 /// Right section for the justified headers
 /// - body (content): The body of the right header
 #let secondary-right-header(body) = {
-  set text(
-    size: 10pt,
-    weight: "thin",
-    style: "italic",
-    fill: color-accent,
-  )
-  body
+  context {
+    set text(
+      size: 10pt,
+      weight: "thin",
+      style: "italic",
+      fill: state-color-accent.get(),
+    )
+    body
+  }
 }
 
 /// Right section of a tertiaty headers.
@@ -165,17 +150,19 @@ $endif$
   firstname: "",
   lastname: "",
 ) = {
-  pad(bottom: 5pt)[
-    #block[
-      #set text(
-        size: 32pt,
-        style: "normal",
-        font: (font-header),
-      )
-      #text(fill: color-gray, weight: "thin")[#firstname]
-      #text(weight: "bold")[#lastname]
+  context {
+    pad(bottom: 5pt)[
+      #block[
+        #set text(
+          size: 32pt,
+          style: "normal",
+          font: state-font-header.get(),
+        )
+        #text(fill: color-gray, weight: "thin")[#firstname]
+        #text(weight: "bold")[#lastname]
+      ]
     ]
-  ]
+  }
 }
 
 #let create-header-position(
@@ -186,15 +173,17 @@ $endif$
     below: 0.75em,
   )
 
-  set text(
-    color-accent,
-    size: 9pt,
-    weight: "regular",
-  )
+  context {
+    set text(
+      state-color-accent.get(),
+      size: 9pt,
+      weight: "regular",
+    )
 
-  smallcaps[
-    #position
-  ]
+    smallcaps[
+      #position
+    ]
+  }
 }
 
 #let create-header-address(
@@ -313,7 +302,7 @@ $endif$
     size: 10pt,
     style: "normal",
     weight: "light",
-    fill: color-gray,
+    fill: color-darknight,
   )
   set par(leading: 0.65em)
   set list(indent: 1em)
@@ -341,11 +330,24 @@ $endif$
   author: (:),
   date: datetime.today().display("[month repr:long] [day], [year]"),
   profile-photo: "",
+  font-header: "Roboto",
+  font-text: "Source Sans 3",
+  color-accent: rgb("#dc3522"),
+  color-link: color-darknight,
+  title-meta: none,
+  author-meta: none,
   body,
 ) = {
+  // Set states ----------------------------------------------------------------
+  state-font-header.update(font-header)
+  state-font-text.update(font-text)
+  state-color-accent.update(color-accent)
+  state-color-link.update(color-link)
+
+  // Set document metadata -----------------------------------------------------
   set document(
-    author: author.firstname + " " + author.lastname,
-    title: title,
+    title: title-meta,
+    author: author-meta,
   )
 
   set text(
@@ -358,7 +360,7 @@ $endif$
   set page(
     paper: "a4",
     margin: (left: 15mm, right: 15mm, top: 10mm, bottom: 10mm),
-    footer: [
+    footer: context [
       #set text(
         fill: gray,
         size: 8pt,
@@ -373,14 +375,10 @@ $endif$
           CV
         ]
       ][
-        #context counter(page).display()
+        #counter(page).display()
       ]
     ],
   )
-
-  show link: this => {
-    text(this, fill: color-accent)
-  }
 
   // set paragraph spacing
 
@@ -394,27 +392,23 @@ $endif$
       above: 1.5em,
       below: 1em,
     )
+    
     #set text(
-      size: 16pt,
-      weight: "regular",
+        size: 16pt,
+        weight: "regular",
     )
 
-    #align(left)[
-      #text[#strong[#text(color-accent)[#it.body.text.slice(0, 3)]#text(color-darkgray)[#it.body.text.slice(3)]]]
-      #box(width: 1fr, line(length: 100%))
-    ]
+    #context {
+      align(left)[
+        #text[#strong[#text(state-color-accent.get())[#it.body.text.slice(0, 3)]#text(
+            color-darkgray,
+          )[#it.body.text.slice(3)]]]
+        #box(width: 1fr, line(length: 100%))
+      ]
+    }
   ]
 
   show heading.where(level: 2): it => {
-    set text(
-      size: 12pt,
-      weight: "regular",
-      fill: color-gray,
-    )
-    smallcaps[#it.body]
-  }
-
-  show heading.where(level: 3): it => {
     set text(
       color-middledarkgray,
       size: 12pt,
@@ -423,6 +417,17 @@ $endif$
     it.body
   }
 
+  show heading.where(level: 3): it => {
+    set text(
+      size: 10pt,
+      weight: "regular",
+      fill: color-gray,
+    )
+    smallcaps[#it.body]
+  }
+
+  // Other settings
+  show link: set text(fill: color-link)
 
   // Contents
   create-header(
