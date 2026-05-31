@@ -32,6 +32,15 @@ jobs:
             libxml2-dev \
             pkg-config
 
+      - name: Install Font Awesome 7 fonts
+        run: |
+          curl -L -o /tmp/fontawesome.zip \
+            https://use.fontawesome.com/releases/v7.2.0/fontawesome-free-7.2.0-desktop.zip
+          unzip -q /tmp/fontawesome.zip -d /tmp/fontawesome
+          mkdir -p ~/.local/share/fonts
+          find /tmp/fontawesome -type f \( -name '*.otf' -o -name '*.ttf' \) -exec cp {} ~/.local/share/fonts/ \;
+          fc-cache -f -v
+
       - name: Restore R packages from renv
         uses: r-lib/actions/setup-renv@v2
 
