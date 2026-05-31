@@ -81,3 +81,24 @@ jobs:
           git add cv.pdf
           git commit -m "chore: auto-render cv.pdf [skip cv render]"
           git push
+
+      - name: Sync Nitta_CV.pdf to joelnitta-home
+        if: steps.changed.outputs.changed == 'true'
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git clone \
+            https://x-access-token:${GH_PAT}@github.com/joelnitta/joelnitta-home.git \
+            /tmp/joelnitta-home
+          mkdir -p /tmp/joelnitta-home/content/pdf
+          cp cv.pdf /tmp/joelnitta-home/content/pdf/Nitta_CV.pdf
+          cd /tmp/joelnitta-home
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- content/pdf/Nitta_CV.pdf; then
+            echo "Nitta_CV.pdf unchanged, skipping commit"
+          else
+            git add content/pdf/Nitta_CV.pdf
+            git commit -m "chore: update Nitta_CV.pdf from joelnitta-cv"
+            git push
+          fi
