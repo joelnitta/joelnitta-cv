@@ -267,7 +267,7 @@ For complete summary of projects on github, please see <https://github.com/joeln
   title: "Tsukuba Botanical Garden Special Fern Exhibit",
   location: "Tsukuba, Japan",
   date: "2023",
-  description: "FTOL and PPG2: The Cutting Edge of Pteridophyte Evolution and Systematics"
+  description: "FTOL and PPG2: The Cutting Edge of Pteridophyte Evolution and Systematics*"
 )
 
 #resume-entry(
@@ -281,7 +281,7 @@ For complete summary of projects on github, please see <https://github.com/joeln
   title: "21st Annual Meeting of the Japanese Society for Plant Systematics",
   location: "Online",
   date: "2022",
-  description: "Phylogenetic systematics and community assembly processes in ferns",
+  description: "Phylogenetic systematics and community assembly processes in ferns*",
 )
 #resume-item[
   - Young Scientist Award Lecture
@@ -291,7 +291,7 @@ For complete summary of projects on github, please see <https://github.com/joeln
   title: "Japan Pteridological Society Meeting at the 81st Annual Meeting of the Botanical Society of Japan",
   location: "Noda, Japan",
   date: "2017",
-  description: "Fern flora of Moorea and Tahiti, French Polynesia: Community analysis using DNA barcodes"
+  description: "Fern flora of Moorea and Tahiti, French Polynesia: Community analysis using DNA barcodes*"
 )
 ```
 
